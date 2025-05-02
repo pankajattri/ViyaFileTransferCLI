@@ -6,6 +6,10 @@ The viya-file-UD-er is a Command-Line Interface (CLI) application written in Go,
 3. When uploading file(s) users can choose to upload *.zip, *.tar, and *.tar.gz files and upload them as is OR they can choose to unzip and upload.
 4. Similarly, when downloading files users can download files as is, or they can choose to zip all files and download a single *.zip file.
 
+## Authenticating the application
+Authenticates with SAS Viya using OAuth (client ID, secret, username, password). Refer to this [article](https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-Authenticating-as-a-Custom-Application/ta-p/887079) for helpful details on how to authenticate a custom application.
+Stores credentials in ~/.viya/config.json for reuse.
+
 ## Running the Application
 **Run Modes**
 - Interactive Mode: Prompts users for inputs (e.g., folder paths, file names, SAS Content or Shared Drive, zip options).
@@ -20,6 +24,13 @@ https://github.com/user-attachments/assets/12568d80-7cbb-4fbd-b350-9e5bc743cb7d
 The video below shows how the utility can be run to download files in interactive mode (in Windows). Similar actions can be perfomed on Linux/Mac OS by usign the respective utility binary.
 
 https://github.com/user-attachments/assets/8f6ad506-8bac-4dd5-9d00-316b3b003279
+
+- Command-Line Mode: Specifies all parameters via flags for automatin and scripting.
+<pre><code>
+  .\viya-file-UD-er.exe upload --local-folder "C:\Demo\File Transfer CLI\FilesToUpload" --remote-folder "/nfsshare/sashls2/data/0. CLI File Upload" --files "rlae.sas,lab test types.xlsx,OtherFiles.tar" --destination drive --unzip
+  .\viya-file-UD-er.exe download --remote-folder "/nfsshare/sashls2/data/0. CLI File Download" --local-path "C:\Demo\File Transfer CLI\DownloadedFiles" --files "rlae.sas,lab test types.xlsx" --zip
+</code>
+
 
 Steps to Install:
 1. Download the appropriate binary. viya-file-UD-er for Windows, viya-file-UD-er-linux for Linux and viya-file-UD-er-mac for Mac OS.

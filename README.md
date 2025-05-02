@@ -9,9 +9,9 @@ The viya-file-UD-er is a Command-Line Interface (CLI) application written in Go,
 ## Running the Application
 **Run Modes**
 - Interactive Mode: Prompts users for inputs (e.g., folder paths, file names, SAS Content or Shared Drive, zip options).
-```bash```
+<pre><code>```bash```
 ```./viya-file-UD-er upload```
-```./viya-file-UD-er download ```
+```./viya-file-UD-er download ```</code></pre>
 
 The video below shows how the utility can be run to upload files in interactive mode (in Windows). Similar actions can be perfomed on Linux/Mac OS by usign the respective utility binary.
 

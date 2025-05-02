@@ -1,15 +1,21 @@
-SAS Viya File Transfer CLI
+## SAS Viya File Transfer CLI
 
-This Command Line Interface utility allows users to upload and download files from their local directories to SAS Content or Shared drive in SAS Viya. The utility can also be scheduled if needed. Important functionalities are noted below:
-1. Upload or Download one or more file from local or shared drive to SAS Content or Shared Drive in SAS Viya.
-2. When uploading file(s) users can choose to upload *.zip, *.tar, and *.tar.gz files and upload them as is OR they can choose to unzip and upload.
-3. Similarly, when downloading files users can download files as is, or they can choose to zip all files and download a single *.zip file.
+The viya-file-UD-er is a Command-Line Interface (CLI) application written in Go, designed to upload and download files between a local system and SAS Viya, supporting both SAS Content (Viya’s internal folder structure) and Shared Drive (physical file system). The application can be run interactively or as batch using parameters. Important functionalities are noted below:
+1. The application is a single binary. It contains all dependencies and so it can be run without requiring a runtime environment. In other words, all you need is your command prompt/terminal to run the application.
+2. Upload or Download one or more file from local or shared drive to SAS Content or Shared Drive in SAS Viya.
+3. When uploading file(s) users can choose to upload *.zip, *.tar, and *.tar.gz files and upload them as is OR they can choose to unzip and upload.
+4. Similarly, when downloading files users can download files as is, or they can choose to zip all files and download a single *.zip file.
 
-The video below shows how the utility can be run to upload files via a command prompt (in Windows). Similar actions can be perfomed on Linux/Mac OS by usign the respective utility binary.
+## Running the Application
+**Run Modes**
+- Interactive Mode: Prompts users for inputs (e.g., folder paths, file names, SAS Content or Shared Drive, zip options).
+<pre><code>```bash ./viya-file-UD-er upload ./viya-file-UD-er download ```</code></pre>
+
+The video below shows how the utility can be run to upload files in interactive mode (in Windows). Similar actions can be perfomed on Linux/Mac OS by usign the respective utility binary.
 
 https://github.com/user-attachments/assets/12568d80-7cbb-4fbd-b350-9e5bc743cb7d
 
-The video below shows how the utility can be run to download files via a command prompt (in Windows). Similar actions can be perfomed on Linux/Mac OS by usign the respective utility binary.
+The video below shows how the utility can be run to download files in interactive mode (in Windows). Similar actions can be perfomed on Linux/Mac OS by usign the respective utility binary.
 
 https://github.com/user-attachments/assets/8f6ad506-8bac-4dd5-9d00-316b3b003279
 

@@ -6,6 +6,15 @@ The viya-file-UD-er is a Command-Line Interface (CLI) application written in Go,
 3. When uploading file(s) users can choose to upload *.zip, *.tar, and *.tar.gz files and upload them as is OR they can choose to unzip and upload.
 4. Similarly, when downloading files users can download files as is, or they can choose to zip all files and download a single *.zip file.
 
+## Setting up the application
+1. Download the "CopyFilesFromSASContentToSharedDrive_viceversa.sas" file. Create a new SAS job using this code. Refer to this [link](https://go.documentation.sas.com/doc/en/pgmsascdc/v_062/jobexecug/n055josnxfatfwn1pyr7p1ah7225.htm) here on how to create Jobs. Once created copy the Job ID. When the applicaiton is run the first time specify this job ID for "SAS Job ID" prompt.
+2. Download the appropriate binary. viya-file-UD-er for Windows, viya-file-UD-er-linux for Linux and viya-file-UD-er-mac for Mac OS.
+3. Navigate to the directory (from command prompt or terminal) where the binary is placed.
+4. Run the file using these commands: .\viya-file-UD-er. More details in the section "Running the Applicaiton" below.
+5. The first time the file is run user will be asked to provide SAS Viya URL, SAS Job ID, client ID and client Secret. On subsequent upload and download actions user will be asked to provide username, password, and SSL certificate path (if needed by the Viya instance). An option to run in an insecure/non HTTPs way is also provided for testing purposes.
+6. There are two main operations that can be performed using the binary: upload and download.
+7. The file can be run interactively by accessing 'upload' or 'download' functions and providing text for interactive prompts. Alternatively, values can be provided by using appropriate flags to run the applicaiton via command-line. The flags can be accessed by using --help or -h. E.g., \.viya-file-UD-er.exe upload --help
+   
 ## Authenticating the application
 Authenticates with SAS Viya using OAuth (client ID, secret, username, password). Refer to this [article](https://communities.sas.com/t5/SAS-Communities-Library/SAS-Viya-Authenticating-as-a-Custom-Application/ta-p/887079) for helpful details on how to authenticate a custom application.
 Stores credentials in ~/.viya/config.json for reuse.
@@ -29,13 +38,6 @@ https://github.com/user-attachments/assets/8f6ad506-8bac-4dd5-9d00-316b3b003279
 <pre><code>
   .\viya-file-UD-er.exe upload --local-folder "C:\Demo\File Transfer CLI\FilesToUpload" --remote-folder "/nfsshare/sashls2/data/0. CLI File Upload" --files "rlae.sas,lab test types.xlsx,OtherFiles.tar" --destination drive --unzip
   .\viya-file-UD-er.exe download --remote-folder "/nfsshare/sashls2/data/0. CLI File Download" --local-path "C:\Demo\File Transfer CLI\DownloadedFiles" --files "rlae.sas,lab test types.xlsx" --zip
-</code>
+</code></pre>
 
 
-Steps to Install:
-1. Download the appropriate binary. viya-file-UD-er for Windows, viya-file-UD-er-linux for Linux and viya-file-UD-er-mac for Mac OS.
-2. Navigate to the directory (from command prompt or terminal) where the binary is placed.
-3. Run the file using these commands: .\viya-file-UD-er.
-4. The first time the file is run user will have to provide SAS Viya URL, client ID and client Secret. On subsequent uplaod and download actions user will be asked to provide username, password, and SSL certificate path (if needed by the Viya instance). An option to run in an insecure/non HTTPs way is also provided for testing purposes.
-5. There are two main operations that can be performed using the binary: upload and download.
-6. The file can be run interactively by accessing 'upload' or 'download' functions and providing prompt values. Alternatively, prompts can be provided by using appropriate flags. The flags can be accessed by using --help or -h. E.g., \.viya-file-UD-er.exe upload --help

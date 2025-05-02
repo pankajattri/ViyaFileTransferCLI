@@ -1,14 +1,14 @@
 ********************************************************;
 * Name: Copy files from SAS Content to Shared drive and ; 
 *       vice-verse		                                ;
-* Description: Copies files from SAS Content Drive to	;
-*				Shared drive folder path.				;
-*														;
+* Description: Copies files from SAS Content Drive to	  ;
+*				Shared drive folder path.				        ;
+*														              ;
 * Arguments:                                            ;
-* source_folder: Folder name in SAS Content				;
-* dest_folder: Folder name in Shared drive				;
+* source_folder: Folder name in SAS Content				  ;
+* dest_folder: Folder name in Shared drive				  ;
 * file_list: List of files to be copied from the source ;
-* folder to the destination folder.						;
+* folder to the destination folder.						     ;
 ********************************************************;
 
 %global source_folder dest_folder file_list;

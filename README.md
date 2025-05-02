@@ -8,7 +8,7 @@ The viya-file-UD-er is a Command-Line Interface (CLI) application written in Go,
 
 ## Setting up the application
 1. Download the "CopyFilesFromSASContentToSharedDrive_viceversa.sas" file. Create a new SAS job using this code. Refer to this [link](https://go.documentation.sas.com/doc/en/pgmsascdc/v_062/jobexecug/n055josnxfatfwn1pyr7p1ah7225.htm) here on how to create Jobs. Once created copy the Job ID. When the applicaiton is run the first time specify this job ID for "SAS Job ID" prompt.
-2. Download the appropriate binary. viya-file-UD-er for Windows, viya-file-UD-er-linux for Linux and viya-file-UD-er-mac for Mac OS.
+2. Download the appropriate binary. viya-file-UD-er for Windows, viya-file-UD-er-linux for Linux and viya-file-UD-er-mac for Mac OS. For Linux and MacOS ensure that you make the binary executable by either doing *chmod 755 viya-file-UD-er-linux* or *chmod +x viya-file-UD-er-mac*. if macOS blocks binary with a security binary allow it to in System Settings > Privacy & Settings or run this command in terminal *xattr -d com.apple.quarantine viya-file-UD-er-max*.
 3. Navigate to the directory (from command prompt or terminal) where the binary is placed.
 4. Run the file using these commands: .\viya-file-UD-er. More details in the section "Running the Applicaiton" below.
 5. The first time the file is run user will be asked to provide SAS Viya URL, SAS Job ID, client ID and client Secret. On subsequent upload and download actions user will be asked to provide username, password, and SSL certificate path (if needed by the Viya instance). An option to run in an insecure/non HTTPs way is also provided for testing purposes.
